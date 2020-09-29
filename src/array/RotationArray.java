@@ -9,6 +9,7 @@ public class RotationArray {
         System.out.println("Before Rotation ::" + Arrays.toString(arr));
         System.out.println("After Rotation :: " );
         rotate(arr, 0, arr.length-1);
+		System.out.println(Arrays.toString(arr));
     }
 
     private static void rotate(int num[], int start, int end ) {
