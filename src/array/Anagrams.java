@@ -1,5 +1,6 @@
 package array;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,4 +24,23 @@ public class Anagrams {
         boolean ret = isAnagram(a, b);
         System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
     }
+
+    //IsPalindrome using Lambda
+    public static PerformOperation isPalindrome(){
+        return (int a) -> Integer.toString( a ).equals( new StringBuilder(Integer.toString( a )).reverse().toString() );
+    }
+
+    //Even Odd using Lambda
+    public static PerformOperation isOdd(){
+        return (int a) -> a % 2!=0;
+    }
+
+    //Is Prime using Lambda
+    public static PerformOperation isPrime(){
+       return (int a) -> BigInteger.valueOf( a ).isProbablePrime( 1 );
+    }
+}
+
+interface PerformOperation{
+    boolean check (int a);
 }
