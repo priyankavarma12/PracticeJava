@@ -25,8 +25,13 @@ public class DigitsOfNumber {
         }
         System.out.println("Reverse of Number:");
         reverseNumber( 654 );
+        System.out.println("Inverse of Number :");
+        inverseNumber( 21453 );
     }
 
+//Reverse Number
+// Input - 754
+// Output - 457
     private static int reverseNumber(int n){
         int dig = 0;
         while(n>0){
@@ -36,8 +41,30 @@ public class DigitsOfNumber {
         }
         return dig;
     }
+
+
+    //Inverse of Number
+/*
+Input - 21453
+Output - 23154
+ */
+    private static int inverseNumber(int n){
+        int inv = 0;
+        int originalPos = 1;
+        while(n!=0){
+            int  originalDig = n%10;
+            int inversePos = originalDig;
+            int inverseDig = originalPos;
+
+            inv = inv + inverseDig * (int)Math.pow( 10, inversePos -1  );
+            n = n/10;
+            originalPos ++;
+        }
+        return inv;
+    }
 }
 
+// Digits Of Number
 // Input - 654321
 // Output
 /* 6
@@ -47,3 +74,5 @@ public class DigitsOfNumber {
 2
 1
  */
+
+
