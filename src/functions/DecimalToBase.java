@@ -25,3 +25,11 @@ public class DecimalToBase {
         return rv;
     }
 }
+
+/**
+Input
+57
+ 2
+Output
+111001
+ */
