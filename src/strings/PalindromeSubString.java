@@ -40,3 +40,14 @@ public class PalindromeSubString {
 
 
 }
+
+/**
+Input
+abcc
+Output
+a
+b
+c
+cc
+c
+ */
