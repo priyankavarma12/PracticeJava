@@ -21,8 +21,11 @@ public class EmployeeMain {
                 new Employee("Henry", 108),
                 new Employee("Henry", 109)
         );
-        Map<String, List<Employee>> employeesByName = employees.stream().collect(Collectors.groupingBy( Employee::getName ));
-        System.out.println(employeesByName);
+       // Map<String, List<Employee>> employeesByName = employees.stream().collect(Collectors.groupingBy( Employee::getName ));
+       // System.out.println(employeesByName);
+
+        Map<String, List<Employee>> employeesByName1 = method( employees );
+        System.out.println(employeesByName1);
 
     }
 
@@ -36,11 +39,15 @@ public class EmployeeMain {
         return  newList;
     }
 
+    private static Map<String,List<Employee>> method(List<Employee> listOfEmployees){
+        Map<String, List<Employee>> employeesByName = listOfEmployees.stream().collect( Collectors.groupingBy( Employee::getName ) );
+        return employeesByName;
+    }
 
 
 }
 
-/* Using java 8
+/** Using java 8
 Input
 Priyanka, 101, dob
 Priyanka, 102, dob
@@ -54,4 +61,11 @@ Output - All Employees cid w.r.t to names
 Priyanka - 101, 102, 103,104 (w.r.t to name )
 John - 105 (w.r.t to name)
 Henry - 106, 107 (w.r.t name)
+
+Actual Output
+ Before Converting ::[1, 2, 3, 4, 5]
+ Print String Type
+ After Converting :: [1, 2, 3, 4, 5]
+ {John=[Employee{name='John', id=105}, Employee{name='John', id=106}, Employee{name='John', id=107}], Priyanka=[Employee{name='Priyanka', id=101}, Employee{name='Priyanka', id=102}, Employee{name='Priyanka', id=103}, Employee{name='Priyanka', id=104}], Henry=[Employee{name='Henry', id=108}, Employee{name='Henry', id=109}]}
+
  */
